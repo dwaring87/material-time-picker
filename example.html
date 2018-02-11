@@ -76,7 +76,7 @@
         // Set Button Click Listener
         $("#time-button").click(function() {
             var time = new Date();
-            dp.show(time, function(selected) {
+            tp.show(time, function(selected) {
                 $("#time").html(selected.toLocaleTimeString());
             });
         });
