@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>TimePicker Example</title>
+
+    <!-- Material Bootstrap CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.0.0-beta.4/dist/css/bootstrap-material-design.min.css" integrity="sha384-R80DC0KVBO4GSTw+wZ5x2zn2pu4POSErBkf8/fSFhPXHxvHJydT0CSgAP2Yo2r4I" crossorigin="anonymous">
+
+    <!-- Date Picker CSS -->
+    <link rel="stylesheet" href="./timepicker.css">
+</head>
+<body style="margin: 25px;">
+
+    <button id="time-button" type="button" class="btn btn-raised btn-primary">Select Time</button>
+    <br /><br />
+    <p>The Selected Time Is: <strong><span id="time"></span></strong></p>
+
+    <!-- TIME PICKER -->
+    <div id="time-picker">
+        <div>
+            <div id="time-picker-header" class="time-picker-bg">
+                <p>
+                    <span id="time-picker-hour"></span>
+                    <span id="time-picker-mins"></span>
+                    <span id="time-picker-ampm"></span>
+                </p>
+            </div>
+            <div>
+                <a id="time-picker-alt-ok-button" class="btn btn-sm btn-flat"><i class="material-icons">check_circle</i></a>
+            </div>
+            <div id="time-picker-clock">
+                <span id="time-picker-hour-hand"></span>
+                <span id="time-picker-hour-center"></span>
+                <p id="time-picker-hour-1" class="time-picker-hour" data-value="1"></p>
+                <p id="time-picker-hour-2" class="time-picker-hour" data-value="2"></p>
+                <p id="time-picker-hour-3" class="time-picker-hour" data-value="3"></p>
+                <p id="time-picker-hour-4" class="time-picker-hour" data-value="4"></p>
+                <p id="time-picker-hour-5" class="time-picker-hour" data-value="5"></p>
+                <p id="time-picker-hour-6" class="time-picker-hour" data-value="6"></p>
+                <p id="time-picker-hour-7" class="time-picker-hour" data-value="7"></p>
+                <p id="time-picker-hour-8" class="time-picker-hour" data-value="8"></p>
+                <p id="time-picker-hour-9" class="time-picker-hour" data-value="9"></p>
+                <p id="time-picker-hour-10" class="time-picker-hour" data-value="10"></p>
+                <p id="time-picker-hour-11" class="time-picker-hour" data-value="11"></p>
+                <p id="time-picker-hour-12" class="time-picker-hour" data-value="12"></p>
+            </div>
+            <p id="time-picker-am-button" class="time-picker-ampm-button">AM</p>
+            <p id="time-picker-pm-button" class="time-picker-ampm-button">PM</p>
+            <div id="time-picker-buttons" class="text-right">
+                <a id="time-picker-reset-button" class="btn btn-sm btn-flat"><i class="material-icons">today</i></a>
+                <a id="time-picker-cancel-button" class="btn btn-sm btn-flat">Cancel</a>
+                <a id="time-picker-ok-button" class="btn btn-sm btn-flat">OK</a>
+            </div>
+        </div>
+    </div>
+    <!-- TIME PICKER -->
+
+
+    <!-- JQuery, Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.4/dist/js/bootstrap-material-design.js" integrity="sha384-3xciOSDAlaXneEmyOo0ME/2grfpqzhhTcM4cE32Ce9+8DW/04AGoTACzQpphYGYe" crossorigin="anonymous"></script>
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+
+    <!-- TimePicker JS -->
+    <script type="text/javascript" src="./timepicker.js"></script>
+    <script type="text/javascript">
+
+        // Initialize the TimePicker
+        var tp = TimePicker("#0D47A1");
+
+        // Set Button Click Listener
+        $("#time-button").click(function() {
+            var time = new Date();
+            dp.show(time, function(selected) {
+                $("#time").html(selected.toLocaleTimeString());
+            });
+        });
+
+    </script>
+</body>
+</html>
